@@ -68,7 +68,7 @@ class EntityCreateDeriver extends DeriverBase implements ContainerDeriverInterfa
         'context' => [],
         'provides' => [
           'entity' => ContextDefinition::create("entity:$entity_type_id")
-            ->setLabel(t($entity_type->getLabel()))
+            ->setLabel($entity_type->getLabel())
             ->setRequired(TRUE)
         ],
       ] + $base_plugin_definition;
