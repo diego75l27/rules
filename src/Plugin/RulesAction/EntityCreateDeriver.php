@@ -85,7 +85,7 @@ class EntityCreateDeriver extends DeriverBase implements ContainerDeriverInterfa
         $required = ($field_name == $bundle_key);
         $multiple = ($definition->getCardinality() === 1) ? FALSE : TRUE;
         $this->derivatives["entity:$entity_type_id"]['context'][$field_name] = ContextDefinition::create($definition->getType())
-          ->setLabel(t($definition->getLabel()))
+          ->setLabel($definition->getLabel())
           ->setRequired($required)
           ->setMultiple($multiple)
           ->setDescription($definition->getDescription());
